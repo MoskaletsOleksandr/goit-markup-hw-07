@@ -664,11 +664,13 @@ input:-webkit-autofill {
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close {
+.modal__close-btn {
   position: absolute;
   top: 8px;
   right: 8px;
+}
 
+.close-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -680,19 +682,21 @@ input:-webkit-autofill {
   border-radius: 50%;
   cursor: pointer;
 }
-.modal-close-icon {
+
+.close-btn-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close:hover .modal-close-icon {
+.close-btn:hover .close-btn-icon {
   fill: #2196f3;
 }
+
 .backdrop.is-hidden .modal {
   opacity: 0;
   transform: translate(-50%, -50%) perspective(200px) rotateY(0.5turn);
 }
 
-.modal-title {
+.modal__title {
   display: block;
 
   margin-bottom: 12px;
@@ -704,22 +708,29 @@ input:-webkit-autofill {
 
   color: var(--title-text-color);
 }
-/* .modal-form {
+
+/* .modal__form {
 } */
-.form-field {
+
+/* .modal-form{} */
+
+.modal-form__field {
   margin: 0 auto 10px auto;
   position: relative;
 
   display: flex;
   flex-direction: column;
 }
-.form-field:nth-of-type(4n) {
+
+.modal-form__field:nth-of-type(4n) {
   margin-bottom: 20px;
 }
-.form-input-wrap {
+
+.modal-form__input-wrap {
   position: relative;
 }
-.form-contact-label {
+
+.modal-form__contact-label {
   margin-bottom: 4px;
 
   font-weight: 400;
@@ -727,23 +738,26 @@ input:-webkit-autofill {
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
 }
-.form-input {
+
+.modal-form__input {
   width: 100%;
+  height: 40px;
   max-width: 448px;
   padding: 12px 16px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
+  color: #000000;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-contact-input {
-  height: 40px;
+
+.modal-form__input--left-padding {
   padding-left: 42px;
-  color: #000000;
 }
-.modal-form-icon {
+
+.modal-form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -751,22 +765,24 @@ input:-webkit-autofill {
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-contact-comment {
+
+.modal-form__comment {
   resize: none;
   height: 120px;
 }
-.form-contact-input:hover + .modal-form-icon,
-.form-contact-input:focus + .modal-form-icon,
-.form-contact-input:not(:placeholder-shown) + .modal-form-icon {
+
+.modal-form__input:hover + .modal-form__icon,
+.modal-form__input:focus + .modal-form__icon,
+.modal-form__input:not(:placeholder-shown) + .modal-form__icon {
   fill: #2196f3;
 }
 
-.form-input:hover,
-.form-input:focus {
+.modal-form__input:hover,
+.modal-form__input:focus {
   border-color: #2196f3;
 }
 
-.form-contact-comment::placeholder {
+.modal-form__comment::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: calc(14 / 12);
@@ -774,23 +790,29 @@ input:-webkit-autofill {
 
   color: rgba(117, 117, 117, 0.5);
 }
-.policy-label {
+
+.modal-form__policy {
+  margin-bottom: 30px;
+}
+
+/* .policy{} */
+
+.policy__label {
   display: flex;
   gap: 7px;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 30px;
 
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
-/* .policy-checkbox {
+
+/* .policy__checkbox {
 } */
 
-.policy-checkbox-icon {
+.policy__checkbox-icon {
   fill: #fff;
   border: 2px solid #212121;
   border-radius: 2px;
@@ -800,24 +822,22 @@ input:-webkit-autofill {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.policy-checkbox:checked + .policy-checkbox-icon {
+.policy__checkbox:checked + .policy__checkbox-icon {
   border-color: transparent;
   background-color: #2196f3;
 }
 
-.policy-checkbox:focus + .policy-checkbox-icon {
+.policy__checkbox:focus + .policy__checkbox-icon {
   outline: 2px solid #2196f3;
 }
-.policy-link {
-  position: relative;
 
-  /* display: block;
-  padding-left: 3px; */
+.policy__link {
+  position: relative;
 
   color: var(--active-link-color);
 }
 
-.policy-link:after {
+.policy__link:after {
   content: '';
 
   position: absolute;
@@ -828,7 +848,8 @@ input:-webkit-autofill {
   height: 1px;
   background: #2196f3;
 }
-.modal-form-btn {
+
+.modal-form__btn {
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -848,8 +869,8 @@ input:-webkit-autofill {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-btn:hover,
-.modal-form-btn:focus {
+.modal-form__btn:hover,
+.modal-form__btn:focus {
   background-color: #188ce8;
 }
 
@@ -923,18 +944,18 @@ input:-webkit-autofill {
   color: #fff;
 }
 
-/* .socials__item-icon--color-white {
-  fill: currentColor;
-} */
 /* FOOTER FORM */
 
-.footer-form-field {
+.footer__subscription {
   margin-left: auto;
+}
+
+.subscription {
   width: 570px;
   height: 86px;
 }
 
-.footer-form-title {
+.subscription__title {
   display: block;
   margin-bottom: 20px;
 
@@ -943,11 +964,11 @@ input:-webkit-autofill {
   color: var(--title-text-bright-color);
 }
 
-.footer-form {
+.subscription__form {
   display: flex;
 }
 
-.footer-form-input {
+.subscription__form-input {
   width: 358px;
   height: 50px;
   padding: 15px 16px;
@@ -969,16 +990,16 @@ input:-webkit-autofill {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-form-input:-webkit-autofill {
+.subscription__form-input:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0 50px #2f303a;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-form-input:focus {
+.subscription__form-input:focus {
   border-color: #2196f3;
 }
 
-.footer-form-input::placeholder {
+.subscription__form-input::placeholder {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
@@ -988,7 +1009,7 @@ input:-webkit-autofill {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-form-btn {
+.subscription__form-btn {
   display: flex;
   padding: 10px 28px;
   align-items: center;
@@ -1005,12 +1026,12 @@ input:-webkit-autofill {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-form-btn:hover,
-.footer-form-btn:focus {
+.subscription__form-btn:hover,
+.subscription__form-btn:focus {
   background-color: #188ce8;
 }
 
-.footer-form-btn-icon {
+.subscription__form-btn-icon {
   margin-left: 10px;
   fill: currentColor;
 }
