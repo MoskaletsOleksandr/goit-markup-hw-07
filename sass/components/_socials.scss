@@ -21,14 +21,18 @@
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover{
+            background-color: #2196f3;
+            color: #ffffff;
+        }
+
+        &:focus{
+            background-color: #2196f3;
+            color: #ffffff;
+        }
 }
 
 .socials__item-icon {
     fill: currentColor;
-}
-
-.socials__item-link:hover,
-.socials__item-link:focus {
-    background-color: #2196f3;
-    color: #ffffff;
 }

@@ -30,17 +30,17 @@
 
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
         opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .backdrop.is-hidden &{
+        opacity: 0;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(0.5turn);
+    }
 }
 
 .modal__close-btn {
     position: absolute;
     top: 8px;
     right: 8px;
-}
-
-.backdrop.is-hidden .modal {
-    opacity: 0;
-    transform: translate(-50%, -50%) perspective(200px) rotateY(0.5turn);
 }
 
 .modal__title {

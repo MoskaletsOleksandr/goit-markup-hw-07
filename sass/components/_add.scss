@@ -7,25 +7,37 @@
 /* .add__list {
 } */
 
-.add__list-item:not(:last-child) {
+.add__list-item{
+    
+    &:not(:last-child) {
     margin-bottom: 9px;
+    }
+
+    &:hover{
+        color: var(--active-link-color);
+    }
+
+    &:focus{
+        color: var(--active-link-color);
+    }
 }
 
 .add__list-map {
     color: #ffffff;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        color: var(--active-link-color);
+    }
+    
+    &:focus {
+        color: var(--active-link-color);
+    }
 }
 
 .add__list-link {
     color: inherit;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.add__list-item:hover,
-.add__list-item:focus,
-.add__list-map:hover,
-.add__list-map:focus {
-    color: var(--active-link-color);
 }
